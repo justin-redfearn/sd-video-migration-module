@@ -1,0 +1,14 @@
+<?php
+/**
+ * Migrate from Video Embed Field to core's standard oEmbed system.
+ */
+function sd_video_migration_update_8100() {
+
+  //install the helper submodule that faciliates the migration
+  \Drupal::service('module_installer')->install(['vem_migrate_oembed']);
+
+  //run the migration
+  \Drupal::service('vem_migrate_oembed.migrate')->migrate();
+
+  \Drupal::service('module_installer')->uninstall(['vem_migrate_oembed']);
+}

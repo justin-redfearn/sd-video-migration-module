@@ -1,0 +1,6 @@
+name: Sandstorm Video Migration
+description: Temporary helper module to migration from video_embed_field to media core.
+package: Custom
+
+type: module
+core_version_requirement: ^8 || ^9
